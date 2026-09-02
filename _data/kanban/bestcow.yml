@@ -1,0 +1,20 @@
+# ⚠️ 이 파일은 bestcow 전용입니다 — 다른 팀원은 수정하지 마세요 (충돌 방지 규칙).
+owner: bestcow
+name: 이재우
+domain: 인프라·총괄
+color: "#e0af68"
+cards:
+  - title: "실배포 1차 (W2 마일스톤 조기 완료)"
+    feature: "W1-4"
+    status: done
+    done: 2026-08-27
+    detail: |
+      EC2(서울, t3.micro+스왑 2G, Elastic IP)에 db·api·worker·caddy 4개 컨테이너 배포(docker-compose.prod.yml — 로컬 compose와 별개 구성), 프론트는 Vercel 자동 배포.
+      API https://api.arda.seuk.cloud (Caddy HTTPS), 메일은 api→SQS→worker→SES. 상세 절차는 07-deploy.md.
+  - title: "주간 다이제스트 (금요일 — 그 주 변경 요약)"
+    feature: "운영"
+    status: doing
+  - title: "09/04 초기 버전 게이트 점검"
+    feature: "게이트"
+    status: todo
+    due: 2026-09-04

@@ -25,6 +25,13 @@ layout: default
     {%- endif -%}
 
     <div class="cover-meta-grid">
+      {%- if page.project_name -%}
+      <div class="meta-card wide">
+        <p class="label">사업명</p>
+        <p class="value">{{ page.project_name }}</p>
+        {%- if page.system_name -%}<p class="note">시스템명: {{ page.system_name }}</p>{%- endif -%}
+      </div>
+      {%- endif -%}
       <div class="meta-card">
         <p class="label">개발 기간</p>
         <p class="value">{{ page.dev_period }}</p>

@@ -33,10 +33,13 @@ theme: minima
 plugins:
   - jekyll-feed
 
-# Explicit top-nav pages, in display order (excludes index/about)
+# Explicit top-nav pages, in display order
 header_pages:
   - toc.markdown
+  - about.markdown
   - devlog.markdown
+  - kanban.markdown
+  - feedback.markdown
   - open-items.markdown
 
 # Exclude from processing.
