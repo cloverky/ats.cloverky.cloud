@@ -4,6 +4,12 @@ title: 목차
 permalink: /toc/
 ---
 
+## 0. 프로젝트 소개
+{: .toc-h2}
+
+- [Arda — 핵심 소주제 · 주요 기능 · 기술 스택 · 아키텍처](/about/)
+{: .toc-list}
+
 ## 1. 사업 개요
 {: .toc-h2}
 
@@ -40,19 +46,19 @@ permalink: /toc/
 - 3) 위험 관리 방안
 {: .toc-list}
 
-## 5. 부록 (작성 예정)
+## 5. 부록
 {: .toc-h2}
 
-- 1) [용어 정의](/appendix/#terms)
-- 2) 관련 서식
+- 1) [용어 정의 · 시스템명 Arda의 의미](/appendix/#terms)
 {: .toc-list}
 
-## 진행 관리
+## 부가 페이지
 {: .toc-h2}
 
-- [개발 로그](/devlog/)
-- [팀 칸반](/kanban/)
+- [팀 칸반 보드](/kanban/)
 - [피드백 트래커](/feedback/)
+- [개발 로그](/devlog/)
+- [미결항목](/open-items/)
 {: .toc-list}
 
 <style>

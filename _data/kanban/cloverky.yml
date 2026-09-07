@@ -1,0 +1,35 @@
+# ⚠️ 이 파일은 cloverky 전용입니다 — 다른 팀원은 수정하지 마세요 (충돌 방지 규칙).
+owner: cloverky
+name: 박소연
+domain: 프론트엔드
+color: "#9ece6a"
+cards:
+  - title: "지원자 칸반 보드 UI (드래그 단계 이동)"
+    feature: "D2·D3"
+    status: done
+    done: 2026-08-28
+    due: 2026-09-04
+    detail: |
+      지원자 카드를 드래그해 단계(지원 접수→서류 검토→면접→최종)를 이동하는 메인 보드 UI — D2·D3.
+  - title: "프론트 뼈대 (React 라우팅·레이아웃)"
+    feature: "front"
+    status: done
+    done: 2026-08-28
+    detail: |
+      React(Vite·TS) 라우팅·레이아웃 뼈대 구축(1주차 React 전환 작업).
+  - title: "API 연동 — 로그인·공고·대시보드·지원자·평가"
+    feature: "큐7"
+    status: done
+    done: 2026-08-28
+    detail: |
+      백엔드 실제 API 5개 영역(로그인·공고·대시보드·지원자·평가) 연동(큐7).
+  - title: "공고의 지원자 화면 + 상세 패널·일괄 단계 변경"
+    feature: "D1·D4·D9"
+    status: done
+    done: 2026-08-28
+    detail: |
+      공고별 지원자 목록 화면과 상세 패널, 지원자 일괄 단계 변경 — D1·D4·D9.
+  - title: "면접 일정 실연동"
+    feature: "front"
+    status: todo
+    note: "면접 일정 테이블(scheduled_at·round) 없어 대기"
