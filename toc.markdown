@@ -47,6 +47,14 @@ permalink: /toc/
 - 2) 관련 서식
 {: .toc-list}
 
+## 진행 관리
+{: .toc-h2}
+
+- [개발 로그](/devlog/)
+- [팀 칸반](/kanban/)
+- [피드백 트래커](/feedback/)
+{: .toc-list}
+
 <style>
   .post-content h2.toc-h2 {
     color: #2a7ae2;

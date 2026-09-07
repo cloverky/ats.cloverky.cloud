@@ -50,6 +50,22 @@ permalink: /dev-requirements/
 </div>
 <p class="dr-note">AI가 합불을 결정하지 않는다. 합불 확정은 항상 사람이 한다 (ADR-0003).</p>
 
+<h2 id="agent-expansion" class="dr-h2">4-1. AI 에이전트 확장</h2>
+<p class="dr-body">지원자 개인정보가 외부 API로 나가지 않도록, 경량 언어모델과 STT를 사내망 안에서 직접 구동하는 방향으로 에이전트 범위를 넓힌다. "입력 → 모델 추론 → 출력"이 전부 내부망에서 끝난다.</p>
+<div class="dr-table-wrap">
+<table class="dr-table">
+  <thead>
+    <tr><th>기능</th><th>설명</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>24시간 면접 일정 자동화</td><td>면접관 가능 시간과 지원자 선택을 에이전트가 조율. 지원자는 메일 링크로 언제든 상태·일정 확인 (반복 연락 불필요)</td></tr>
+    <tr><td>면접 분석 (STT → RAG → 경량 LLM)</td><td>면접 음성을 텍스트로 변환 후 RAG로 근거를 찾아 요약. 1건당 약 $0.045 수준으로 비용 추적</td></tr>
+    <tr><td>지원자 대화형 문의 (FAQ)</td><td>지원자가 자연어로 일정·상태를 물으면 답변. 급여 등 민감 질문 차단, 프롬프트 인젝션 방어</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="dr-note">모바일 앱(Flutter)도 데모 범위에 포함한다 — iOS는 제외.</p>
+
 <h2 id="management" class="dr-h2">5. 정량 평가 기반 지원자 관리 기능</h2>
 <ul class="dr-list">
   <li>지원자 CRUD</li>

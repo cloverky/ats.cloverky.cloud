@@ -8,6 +8,15 @@ permalink: /role-frontend/
 
 <h2 class="rf-h2">작업 로그</h2>
 <div class="rf-log-entry">
+  <p class="rf-log-date">2026-08-28</p>
+  <ul class="rf-list">
+    <li>백엔드 API 연동 (로그인 · 공고 · 대시보드 · 지원자 · 평가)</li>
+    <li>React·Vite·TypeScript 라우팅 및 레이아웃 뼈대 구축</li>
+    <li>지원자 칸반 보드 — 드래그로 단계 이동</li>
+    <li>공고의 지원자 화면 — 상세 패널, 일괄 단계 변경</li>
+  </ul>
+</div>
+<div class="rf-log-entry">
   <p class="rf-log-date">2026-08-27 · <code>front-applicants</code></p>
   <ul class="rf-list">
     <li>대시보드 — 면접 일정 슬롯 그룹핑, 전형 현황 펀넬 추가</li>

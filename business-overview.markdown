@@ -31,6 +31,14 @@ permalink: /business-overview/
     <p class="bo-card-title">인증·권한 체계</p>
     <p class="bo-card-desc">JWT 인증, 역할 3종(관리자 / 채용담당자 / 면접관) 기반 접근 제어</p>
   </div>
+  <div class="bo-card">
+    <p class="bo-card-title">보안 특화 로컬 AI 에이전트</p>
+    <p class="bo-card-desc">경량 언어모델·STT를 사내망에서 직접 구동해 지원자 개인정보가 외부로 나가지 않음. 24시간 면접 일정 자동화, 면접 분석(STT→RAG→LLM)</p>
+  </div>
+  <div class="bo-card">
+    <p class="bo-card-title">모바일 앱</p>
+    <p class="bo-card-desc">Flutter 기반 모바일 앱으로 지원자 관리·칸반 보드 지원 (데모 범위, iOS 제외)</p>
+  </div>
 </div>
 
 <h2 id="effect" class="bo-h2">3. 기대 효과</h2>
