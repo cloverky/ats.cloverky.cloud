@@ -7,6 +7,19 @@ permalink: /team-log/
 <p class="tl-meta">cloverky(프론트엔드) 본인 로그는 <a href="/role-frontend/">/role-frontend/</a> 참고. 아래는 나머지 팀원 로그.</p>
 
 <div class="tl-entry">
+  <p class="tl-date">2026-09-07 <span class="tl-owner">suvisdev · 인프라·에이전트</span></p>
+  <p class="tl-title">발표 전 인프라 안정화 — 앵커 자동화·백업·경보·서버 확장·진위 판별 배포</p>
+  <ul class="tl-list">
+    <li>매일 도장(제출물 무결성 앵커) 자동 게시 복구 — 토큰 12시간 만료·Amoy 가스 공급 중단 대응, 실패 시 이슈 자동 오픈</li>
+    <li>서버 안 지표(CloudWatch+SNS 경보 5종) + 밖에서 15분마다 찌르는 GitHub Actions 외부 헬스체크 — 실패 시 이슈 자동 오픈·복구 시 자동 종료</li>
+    <li>DB 매일 04시 S3 백업(쓰기 전용 IAM, 수명주기 30일), 컨테이너 로그 상한(20MB×3)으로 디스크 고갈 방지</li>
+    <li>서버 t3.small → t3.medium 증설 — 박소연 진위 판별(표정·음성) 서비스(PR #42, ADR-0029)와 동거</li>
+    <li>메일 파이프라인 새 계정에서 지원자 수신까지 실증, SES 프로덕션 액세스 신청(승인 대기)</li>
+    <li>ADR-0030: 알림·메일을 n8n 워크플로로 분리하는 결정, 1단계 인프라(컨테이너·백업·경보) 반영</li>
+  </ul>
+</div>
+
+<div class="tl-entry">
   <p class="tl-date">2026-09-04 <span class="tl-owner">suvisdev · 인프라·에이전트</span></p>
   <p class="tl-title">인프라 완전 이전 — 개인 AWS·자동 배포·팀 셀프서비스 개통</p>
   <ul class="tl-list">

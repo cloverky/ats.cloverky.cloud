@@ -18,3 +18,62 @@ cards:
     feature: "게이트"
     status: todo
     due: 2026-09-04
+  - title: "운영 권한 이관 (ADR-0025) + compose·Caddyfile 저장소 회수 + 팀장 이탈 정리"
+    feature: "09-02 인계"
+    status: done
+    done: 2026-09-02
+    detail: |
+      운영 권한을 인수자(woojeongalex)에게 이관하는 결정 문서(ADR-0025)와, 서버에만 있던 compose·Caddyfile 을 저장소로 회수.
+      운영 DB 의 팀장 계정 비활성, 테스트 지원자 정리, 미배정 항목 목록 정돈.
+
+  - title: "로컬 sLLM 어댑터 · STT 로컬 전환 · Vercel rewrite 제거 · 온프레미스 판 결정 (ADR-0024 §13)"
+    feature: "09-01"
+    status: done
+    done: 2026-09-01
+    note: "로컬·클라우드 두 갈래 전제 마련"
+    detail: |
+      Anthropic / Ollama-Qwen3 어댑터, STT 로컬 전환 경로(faster-whisper), Ollama 사고 모드 토글 + 스트리밍 + 문법 제약.
+      Vercel rewrite 제거 · CORS 미들웨어 신설로 자소서가 제3자 서버를 지나가지 않게.
+      온프레미스 배포 형태(개인정보 로컬 실행 1순위) 결정 반영 — ADR-0024 §13.
+
+  - title: "RAG 실동작화 · pgvector 도입 · 스키마 v1.4 · 더미 지원서 스크립트"
+    feature: "08-31"
+    status: done
+    done: 2026-08-31
+    detail: |
+      RAG 실동작화(백필 CLI · 키워드 폴백 · 벡터∪키워드 병합, ADR-0021), application_embeddings HNSW 인덱스 선언.
+      pgvector 없는 서버에서 API 가 안 뜨던 것 fix-forward, DB 이미지를 pgvector/pgvector:pg16 으로.
+      더미 지원서 투입 스크립트 — 실제 접수 경로로 넣는다.
+
+  - title: "협업 규칙 개정 · 팀 칸반 도입 · SES 재신청 · 도메인 가드 폐지"
+    feature: "08-28"
+    status: done
+    done: 2026-08-28
+    detail: |
+      리뷰·승인 게이트 폐지 → 전원 main 직접 push + 사후 공지로 개정(자율 판단 범위 명시).
+      팀 칸반(지금 이 사이트) 도입, SES 프로덕션 재신청 반영, domain-guard 워크플로 삭제.
+
+  - title: "JWT_SECRET production 게이트 · 프론트 공고 등록 3칸 분리 · 면접 일정 목데이터 확장"
+    feature: "08-27"
+    status: done
+    done: 2026-08-27
+    detail: |
+      A1 로그인 production 보안 게이트 — JWT_SECRET 필수화 + 공개 가입 잠금.
+      공고 등록 본문을 담당 업무·자격 요건·우대 사항 3칸으로 분리.
+
+  - title: "ERD v1.1 컬럼 반영 (B4·B6·D8) · 필수 기능 카운트 정정 · 프롬프트 예시 스케일"
+    feature: "PR#102 PR#92 PR#105"
+    status: done
+    done: 2026-08-26
+    detail: |
+      models.py 에 스키마 v1.1 컬럼 3종 반영, 필수 기능 카운트 정정(23→27, 전체 73→80), 프롬프트 예시 점수 1~5 스케일 정정.
+
+  - title: "ADR-0009·0011·0014 확정 + 스키마 v1.1 + H5 인덱스 + domain-guard 워크플로"
+    feature: "08-25"
+    status: done
+    done: 2026-08-25
+    note: "실배포 1차 전 팀 규칙·스키마 확정"
+    detail: |
+      결정 문서 3종 확정 — 에이전트 UI 혼합안(0009), 모델 opus-5/haiku-4.5(0011), 프로젝트 이름 Arda(0014).
+      스키마 v1.1(B4·B6·D8), applications 최신순 인덱스(H5), 도메인 가드 액션(자기 도메인만 셀프 머지 강제).
+

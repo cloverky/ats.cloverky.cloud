@@ -1,9 +1,47 @@
 # ⚠️ 이 파일은 cloverky 전용입니다 — 다른 팀원은 수정하지 마세요 (충돌 방지 규칙).
 owner: cloverky
 name: 박소연
-domain: 프론트엔드
+domain: 에이전트
 color: "#9ece6a"
 cards:
+  - title: "실시간 면접 WebSocket — 말이 끝나면 다음 질문"
+    feature: "PR#54"
+    status: done
+    done: 2026-09-07
+    note: "ADR-0029 · 답변 단위가 아닌 실시간 스트리밍 경로"
+    detail: |
+      영상·오디오를 실시간으로 흘려보내며 답이 끝나는 지점에서 다음 질문으로 넘어가는 경로.
+
+  - title: "진위 판별 서비스 배포 — Dockerfile + 운영 compose + /ai/*"
+    feature: "PR#42"
+    status: done
+    done: 2026-09-07
+    note: "CPU 모델·GPU 불필요"
+    detail: |
+      표정·음성 진위 판별 서비스(ADR-0029)를 컨테이너로 만들어 운영 compose 에 붙임.
+      리버스 프록시 /ai/* 로 접근, CPU 모델이라 GPU 서버 불필요 — 같은 EC2 에서 돌린다.
+
+  - title: "표정·음성 진위 판별 도입 결정 — ADR-0029"
+    feature: "PR#45"
+    status: done
+    done: 2026-09-07
+    detail: |
+      이전 결정(표정 분석 제외)을 개정, 진위 판별을 재도입하는 결정 문서.
+
+  - title: "자소서 주장 → 면접 꼬리 질문 생성"
+    feature: "PR#12"
+    status: done
+    done: 2026-09-04
+    detail: |
+      자기소개서에 나온 주장을 근거로 면접에서 물어볼 후속 질문을 생성.
+
+  - title: "면접 영상 진위 판별 서비스 초안"
+    feature: "PR#3"
+    status: done
+    done: 2026-09-04
+    detail: |
+      진위 판별 서비스의 초기 형태를 저장소에 추가.
+
   - title: "지원자 칸반 보드 UI (드래그 단계 이동)"
     feature: "D2·D3"
     status: done
@@ -33,3 +71,62 @@ cards:
     feature: "front"
     status: todo
     note: "면접 일정 테이블(scheduled_at·round) 없어 대기"
+  - title: "지원자 상세 패널 UI 개선 + 더보기 페이지 + 모바일 UI"
+    feature: "09-03"
+    status: done
+    done: 2026-09-03
+    detail: |
+      지원자 상세 패널(D4·D5)의 정보 배치와 시각 정돈, 더보기 페이지 신설, 모바일 UI 개선(progress dots 정렬 등).
+
+  - title: "모바일 웹 셸(D11) · 첨부 파일 블록(C7) · F4 업로드 진행률 · 로그아웃 진입점 3종"
+    feature: "09-02"
+    status: done
+    done: 2026-09-02
+    detail: |
+      768px 이하에서 하단 탭바(공고·지원자·홈·캘린더·더보기)로 감싼 모바일 웹 셸.
+      지원자 상세 패널에 첨부 파일 블록(C7 프론트 몫), F4 업로드 진행률 바, 로그아웃 진입점 3곳(우측 상단·설정 계정 탭·박스 정리).
+      모바일 툴바 sticky·overflow·단계 필 균등 폭 등 부수 fix 다수.
+
+  - title: "오른쪽 패널 통합 · 캘린더 딥링크·다중 선택 · 아르 3D 캐릭터"
+    feature: "09-01"
+    status: done
+    done: 2026-09-01
+    note: "05-design 토큰 일괄 정리"
+    detail: |
+      상세·아르·캘린더·평가 네 자리로 나뉘던 오른쪽 패널을 한 자리(단일 개방·폭 360·모션 통일)로 합침.
+      캘린더 시간대 다중 선택, 대시보드 축소판→그날 패널→지원자 상세 딥링크.
+      아르 아이콘을 3D 캐릭터 렌더 PNG 로 통일, 색·그림자·radius·간격을 05-design 토큰으로.
+
+  - title: "프론트 실연동 착수 — API 클라이언트·대시보드·지원자·평가·설정 + 칸반 뷰"
+    feature: "PR#131 PR#132 PR#134 PR#135 PR#140"
+    status: done
+    done: 2026-08-28
+    note: "큐 7·8 프론트 몫"
+    detail: |
+      API 클라이언트·인증 배선과 공고 목록 실연동, 대시보드·지원자·평가·설정 5개 영역 실연동, 지원자 상세 연결과 패널 겹침 수정.
+      칸반 뷰(드래그로 단계 변경, 토스트 안내) 추가.
+
+  - title: "빈 화면 구현 · 앱 셸 개선 · 아르 UX"
+    feature: "PR#119"
+    status: done
+    done: 2026-08-27
+    detail: |
+      기능 진입 전 빈 상태 화면을 채우고, 앱 셸(상단 바·사이드바)의 여백·순서 정돈, 아르 채팅 진입 UX 다듬음.
+
+  - title: "React 로그인·공고 목록·대시보드 면접 일정 · 면접 일정 화면"
+    feature: "PR#87 PR#89 PR#112 PR#115"
+    status: done
+    done: 2026-08-26
+    detail: |
+      React 로그인·공고 목록 화면, 대시보드에 면접 일정·전형 현황, 면접 일정 화면 추가와 대시보드 진입점 연결.
+      목업 검토 후 마감 뱃지 스타일 누락 수정.
+
+  - title: "목업 화면 3종 — 대시보드·공고·지원자 등록 + 이동/닫기 fix"
+    feature: "PR#37 PR#38 PR#39 PR#46 PR#47 PR#80"
+    status: done
+    done: 2026-08-25
+    note: "정적 목업 → 이후 React 실연동"
+    detail: |
+      대시보드 정적 목업, 공고·지원자 등록 화면, 목업 화면 간 이동 연결과 닫기 표시·헤더 정렬 수정.
+      캐릭터 "아르다" 반영.
+
