@@ -53,7 +53,7 @@ permalink: /devlog/
     <a class="devlog-link" href="/team-log/">
       <span class="devlog-sprint">팀</span>
       <span class="devlog-date">팀원</span>
-      <span class="devlog-goal">이재우·김민아·suvisdev 등 팀원별 작업 로그</span>
+      <span class="devlog-goal">김민아·이우정·suvisdev 등 팀원별 작업 로그</span>
     </a>
   </li>
 </ul>

@@ -91,16 +91,6 @@ permalink: /team-log/
 </div>
 
 <div class="tl-entry">
-  <p class="tl-date">2026-08-27 <span class="tl-owner">이재우 · 인프라</span></p>
-  <ul class="tl-list">
-    <li>첫 프로덕션 배포 (W2 목표 조기 완료)</li>
-    <li>EC2(서울, t3.micro + 2G swap), 컨테이너 4개: db · api · worker · caddy</li>
-    <li>API 엔드포인트: <code>https://api.arda.seuk.cloud</code> (Caddy HTTPS)</li>
-    <li>메일 파이프라인: api → SQS → worker → SES</li>
-  </ul>
-</div>
-
-<div class="tl-entry">
   <p class="tl-date">2026-08-26 <span class="tl-owner">팀 전체</span></p>
   <p class="tl-title">Arda ATS 1주차 팀 활동 보고 (08/20~26)</p>
   <ul class="tl-list">

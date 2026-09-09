@@ -7,7 +7,6 @@ permalink: /dev-schedule/
 개발 기간은 **2026년 8월 20일(목) ~ 10월 27일(화), 총 69일(약 10주)**이며, 2주 단위 스프린트로 애자일 스크럼 방식으로 진행한다. 각 스프린트는 스프린트 목표를 기준으로 팀원별 작업을 배분하고, 스프린트 종료 시점마다 리뷰·회고를 거쳐 다음 스프린트에 반영한다.
 
 <div class="kanban-legend">
-  <div class="legend-item"><span class="legend-dot owner-jw"></span>이재우 <small>백엔드·총괄</small></div>
   <div class="legend-item"><span class="legend-dot owner-wj"></span>이우정 <small>검색·데이터</small></div>
   <div class="legend-item"><span class="legend-dot owner-ma"></span>김민아 <small>파일·알림</small></div>
   <div class="legend-item"><span class="legend-dot owner-sy"></span>박소연 <small>프론트엔드</small></div>
@@ -22,7 +21,6 @@ permalink: /dev-schedule/
       <span class="kanban-date">8.20 ~ 9.2</span>
       <p class="kanban-goal">개발 환경 및 기반 설계</p>
     </a>
-    <div class="kanban-card owner-jw"><span class="card-owner">이재우</span>DB 스키마 1차 설계, FastAPI 프로젝트 구조 세팅</div>
     <div class="kanban-card owner-wj"><span class="card-owner">이우정</span>검색 인덱스 전략 설계, 개발 DB 구성</div>
     <div class="kanban-card owner-ma"><span class="card-owner">김민아</span>S3 / SES / SQS 리소스 프로비저닝</div>
     <div class="kanban-card owner-sy"><span class="card-owner">박소연</span>React·TS 프로젝트 스캐폴딩, 로그인 화면</div>
@@ -35,7 +33,6 @@ permalink: /dev-schedule/
       <span class="kanban-date">9.3 ~ 9.16</span>
       <p class="kanban-goal">핵심 기능 1차 구현</p>
     </div>
-    <div class="kanban-card owner-jw"><span class="card-owner">이재우</span>공고 / 지원자 CRUD API 구현</div>
     <div class="kanban-card owner-wj"><span class="card-owner">이우정</span>검색·필터 API 1차 구현</div>
     <div class="kanban-card owner-ma"><span class="card-owner">김민아</span>이력서 S3 업로드 API, 지원 폼 연동</div>
     <div class="kanban-card owner-sy"><span class="card-owner">박소연</span>지원자 목록·상세, 공고 관리 화면</div>
@@ -48,7 +45,6 @@ permalink: /dev-schedule/
       <span class="kanban-date">9.17 ~ 9.30</span>
       <p class="kanban-goal">단계 전환 · 알림 · 대용량 데이터</p>
     </div>
-    <div class="kanban-card owner-jw"><span class="card-owner">이재우</span>지원자 단계 전환(상태 머신) 로직 구현</div>
     <div class="kanban-card owner-wj"><span class="card-owner">이우정</span>더미 지원자 10만 건 적재, 인덱스 튜닝</div>
     <div class="kanban-card owner-ma"><span class="card-owner">김민아</span>SQS 메일 발송 큐 연동</div>
     <div class="kanban-card owner-sy"><span class="card-owner">박소연</span>모바일 반응형 화면 대응</div>
@@ -61,7 +57,6 @@ permalink: /dev-schedule/
       <span class="kanban-date">10.1 ~ 10.14</span>
       <p class="kanban-goal">GraphRAG 통합 · QA</p>
     </div>
-    <div class="kanban-card owner-jw"><span class="card-owner">이재우</span>GraphRAG 파이프라인 연동 지원</div>
     <div class="kanban-card owner-wj"><span class="card-owner">이우정</span>검색 응답 속도 튜닝</div>
     <div class="kanban-card owner-ma"><span class="card-owner">김민아</span>알림 발송 안정화·재시도 로직</div>
     <div class="kanban-card owner-sy"><span class="card-owner">박소연</span>프론트-백엔드 통합 테스트, UX 개선</div>
@@ -74,7 +69,6 @@ permalink: /dev-schedule/
       <span class="kanban-date">10.15 ~ 10.27</span>
       <p class="kanban-goal">배포 및 데모 준비</p>
     </div>
-    <div class="kanban-card owner-jw"><span class="card-owner">이재우</span>전체 기능 점검, 릴리즈 노트 작성</div>
     <div class="kanban-card owner-wj"><span class="card-owner">이우정</span>최종 쿼리·인덱스 점검</div>
     <div class="kanban-card owner-ma"><span class="card-owner">김민아</span>파일·알림 최종 점검</div>
     <div class="kanban-card owner-sy"><span class="card-owner">박소연</span>데모 시나리오 UI 마무리</div>

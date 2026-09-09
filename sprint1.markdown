@@ -29,17 +29,12 @@ permalink: /sprint-1/
       <td><span class="status-badge status-done">완료</span></td>
     </tr>
     <tr>
-      <td rowspan="6">8/21 (금)</td>
+      <td rowspan="5">8/21 (금)</td>
       <td><span class="owner-dot owner-sy"></span>박소연</td>
       <td>AWS 루트 계정으로 로그인 후 IAM 계정을 생성하여 재로그인, RDS 접속 URL 생성 (최우선 선행)</td>
       <td><span class="status-badge status-done">완료</span></td>
     </tr>
     <tr>
-      <td><span class="owner-dot owner-jw"></span>이재우</td>
-      <td>DB 스키마 1차 설계</td>
-      <td><span class="status-badge status-progress">진행중</span></td>
-    </tr>
-    <tr>
       <td><span class="owner-dot owner-wj"></span>이우정</td>
       <td>검색 인덱스 전략 설계</td>
       <td><span class="status-badge status-progress">진행중</span></td>
@@ -60,12 +55,7 @@ permalink: /sprint-1/
       <td><span class="status-badge status-progress">진행중</span></td>
     </tr>
     <tr>
-      <td rowspan="5">8/24 (월)</td>
-      <td><span class="owner-dot owner-jw"></span>이재우</td>
-      <td>DB 스키마 1차 설계</td>
-      <td><span class="status-badge status-progress">진행중</span></td>
-    </tr>
-    <tr>
+      <td rowspan="4">8/24 (월)</td>
       <td><span class="owner-dot owner-wj"></span>이우정</td>
       <td>검색 인덱스 전략 설계</td>
       <td><span class="status-badge status-progress">진행중</span></td>
@@ -86,12 +76,7 @@ permalink: /sprint-1/
       <td><span class="status-badge status-progress">진행중</span></td>
     </tr>
     <tr>
-      <td rowspan="5">8/25 (화)</td>
-      <td><span class="owner-dot owner-jw"></span>이재우</td>
-      <td>DB 스키마 1차 설계</td>
-      <td><span class="status-badge status-done">완료</span></td>
-    </tr>
-    <tr>
+      <td rowspan="4">8/25 (화)</td>
       <td><span class="owner-dot owner-wj"></span>이우정</td>
       <td>검색 인덱스 전략 설계</td>
       <td><span class="status-badge status-done">완료</span></td>
@@ -112,12 +97,7 @@ permalink: /sprint-1/
       <td><span class="status-badge status-done">완료</span></td>
     </tr>
     <tr>
-      <td rowspan="5">8/26 (수)</td>
-      <td><span class="owner-dot owner-jw"></span>이재우</td>
-      <td>FastAPI 프로젝트 구조 세팅</td>
-      <td><span class="status-badge status-progress">진행중</span></td>
-    </tr>
-    <tr>
+      <td rowspan="4">8/26 (수)</td>
       <td><span class="owner-dot owner-wj"></span>이우정</td>
       <td>개발 DB 구성</td>
       <td><span class="status-badge status-progress">진행중</span></td>
@@ -138,12 +118,7 @@ permalink: /sprint-1/
       <td><span class="status-badge status-progress">진행중</span></td>
     </tr>
     <tr>
-      <td rowspan="5">8/27 (목)</td>
-      <td><span class="owner-dot owner-jw"></span>이재우</td>
-      <td>FastAPI 프로젝트 구조 세팅</td>
-      <td><span class="status-badge status-done">완료</span></td>
-    </tr>
-    <tr>
+      <td rowspan="4">8/27 (목)</td>
       <td><span class="owner-dot owner-wj"></span>이우정</td>
       <td>개발 DB 구성</td>
       <td><span class="status-badge status-done">완료</span></td>
