@@ -44,17 +44,32 @@ layout: default
       </div>
       <div class="meta-card">
         <p class="label">문서 작성일</p>
-        <p class="value">{{ page.doc_date }}</p>
+        <p class="value">{{ site.time | date: "%Y년 %-m월 %-d일" }}</p>
+        <p class="note">push 시 자동 갱신 (마지막 배포 기준)</p>
       </div>
       <div class="meta-card wide">
         <p class="label">GitHub</p>
-        <p class="value">{%- if page.github_url -%}<a href="{{ page.github_url }}">{{ page.github_url }}</a>{%- endif -%}</p>
+        <p class="value">{%- if page.github_url -%}<a href="{{ page.github_url }}">{{ page.github_url | remove: "https://" }}</a>{%- endif -%}</p>
+        {%- if page.doc_repo_url -%}<p class="note">문서 저장소 — <a href="{{ page.doc_repo_url }}">{{ page.doc_repo_url | remove: "https://" }}</a></p>{%- endif -%}
       </div>
-      <div class="meta-card cta wide">
+      {%- if page.doc_url -%}
+      <div class="meta-card">
+        <p class="label">문서 사이트</p>
+        <p class="value"><a href="{{ page.doc_url }}">{{ page.doc_url | remove: "https://" }}</a></p>
+      </div>
+      {%- endif -%}
+      <div class="meta-card cta {%- if page.doc_url -%}{%- else -%} wide{%- endif -%}">
         <p class="label">데모 사이트</p>
-        <p class="value">{%- if page.demo_url -%}<a href="{{ page.demo_url }}">{{ page.demo_url }}</a>{%- endif -%}</p>
+        <p class="value">{%- if page.demo_url -%}<a href="{{ page.demo_url }}">{{ page.demo_url | remove: "https://" }}</a>{%- endif -%}</p>
+        {%- if page.demo_note -%}<p class="note" style="color:rgba(255,255,255,0.7)">{{ page.demo_note }}</p>{%- endif -%}
       </div>
     </div>
+
+    {%- if content != "" and content != nil -%}
+    <div class="cover-body">
+      {{ content }}
+    </div>
+    {%- endif -%}
 
   </div>
 </div>
@@ -173,6 +188,34 @@ layout: default
   }
   .meta-card.cta .value a {
     color: #fff;
+  }
+
+  .cover-body {
+    margin-top: 48px;
+    text-align: left;
+  }
+  .cover-body h2 {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 0 16px;
+    color: var(--ink);
+  }
+  .cover-body table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  .cover-body th {
+    background: #F3F4F6;
+    font-weight: 700;
+    padding: 10px 14px;
+    border: 1px solid var(--line);
+    text-align: left;
+  }
+  .cover-body td {
+    padding: 10px 14px;
+    border: 1px solid var(--line);
+    line-height: 1.55;
   }
 
   @media (max-width: 480px) {
