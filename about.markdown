@@ -1,203 +1,110 @@
 ---
-layout: page
+layout: default
 title: 프로젝트 소개
+nav_order: 3
 permalink: /about/
 ---
 
-<h1 class="pi-h1">프로젝트 소개 — Arda</h1>
-<p class="pi-lead">채용 지원자 관리 시스템(ATS) — 공고 등록부터 지원 접수, 단계별 심사·평가, 합불 통보까지</p>
+# 프로젝트 소개
 
-<h2 class="pi-h2">핵심 소주제</h2>
+## Arda
 
-<div class="pi-topics">
+채용 지원자 관리 시스템(ATS) — 공고 등록부터 지원 접수, 단계별 심사·평가, 합불 통보까지
 
-<div class="pi-topic">
-  <p class="pi-topic-num">1</p>
-  <div>
-    <p class="pi-topic-title">채용 프로세스 통합 관리 파이프라인</p>
-    <p class="pi-topic-body">'합불 등의 핵심 결정은 항상 사람이 한다'라는 원칙을 기반으로, [공고 등록 → 접수 → 단계별 심사 → 결과 통보]까지의 채용 전 과정을 하나의 시스템으로 통합한다. 메인 화면은 지원자 칸반 보드로, 카드를 드래그해 단계를 이동하면 이력이 자동 기록되고 안내 메일이 큐 기반 비동기(+재시도)로 발송된다. JWT 기반 3역할(관리자·채용담당자·면접관) 접근 제어와 더미 지원자 10만 건 기준의 검색과 필터 성능 튜닝을 포함한다.</p>
-  </div>
-</div>
+---
 
-<div class="pi-topic">
-  <p class="pi-topic-num">2</p>
-  <div>
-    <p class="pi-topic-title">보안에 강한 로컬 AI 에이전트</p>
-    <p class="pi-topic-body">경량 모델로 온프레미스 구현. 이력서/면접 기록 등 지원자 개인정보가 외부 API로 전송되지 않도록, 경량 LLM(sLLM)과 STT 모두를 온프레미스 환경에서 구동하는 로컬 에이전트를 구현한다. [입력 → 모델 추론 → 출력]의 모든 과정을 내부망 안에서 완결시켜 '데이터 반출 없는 채용 에이전트'라는 보안 차별점을 확보한다.</p>
-  </div>
-</div>
+## 핵심 소주제
 
-<div class="pi-topic">
-  <p class="pi-topic-num">3</p>
-  <div>
-    <p class="pi-topic-title">지원자가 24시간 접근 가능한 면접 일정 자동화 서비스</p>
-    <p class="pi-topic-body">면접관들의 가용 일정을 파악해 지원자에게 후보 시간을 제안하고, 선택을 받아 일정을 확정·통보하는 조율 과정을 에이전트가 자동화한다. 지원자는 안내 이메일의 링크로 24시간 언제든 접속해 전형 진행 현황과 면접 일정을 실시간으로 확인·선택할 수 있다.</p>
-  </div>
-</div>
+### 1. 채용 프로세스 통합 관리 파이프라인
 
-<div class="pi-topic">
-  <p class="pi-topic-num">4</p>
-  <div>
-    <p class="pi-topic-title">LLM 도구 호출 에이전트 및 RAG 기반 STT 면접 분석</p>
-    <p class="pi-topic-body">"김도현 찾아줘 → 면접 안내 이메일 만들어줘"처럼 자연어 대화만으로 지원자 검색/조회/단계 변경/이메일 초안을 수행하는 도구 호출(Tool-Use) 에이전트를 개발하며, 실행성 작업은 초안(pending_action)까지만 만들어 사람의 확인을 거친다. 면접 분석은 [STT → RAG → sLLM] 파이프라인으로 구성한다.</p>
-  </div>
-</div>
+'합불 등의 핵심 결정은 항상 사람이 한다'라는 원칙을 기반으로, [공고 등록 → 접수 → 단계별 심사 → 결과 통보]까지의 채용 전 과정을 하나의 시스템으로 통합한다. 메인 화면은 지원자 칸반 보드로, 카드를 드래그해 단계를 이동하면 이력이 자동 기록되고 안내 메일이 큐 기반 비동기(+재시도)로 발송된다. JWT 기반 3역할(관리자,채용담당자,면접관) 접근 제어와 더미 지원자 10만 건 기준의 검색과 필터 성능 튜닝을 포함한다.
 
-<div class="pi-topic">
-  <p class="pi-topic-num">5</p>
-  <div>
-    <p class="pi-topic-title">웹/모바일 멀티 클라이언트 및 운영 체계</p>
-    <p class="pi-topic-body">React(Vite/TS) 웹과 Flutter 모바일 앱이 동일한 FastAPI API를 사용하는 계약 중심 설계로, API/ERD 문서를 코드와 같은 커밋에서 갱신하는 규칙으로 5인 병렬 개발의 정합성을 유지한다. Docker, AWS(EC2/S3/SES/SQS), GitHub Actions 기반 배포와 함께 ADR 15건, 팀원별 소유 파일 기반 무충돌 칸반 운영까지 포함한다.</p>
-  </div>
-</div>
+### 2. 보안에 강한 로컬 AI 에이전트
 
-</div>
+경량 모델로 온프레미스 구현. 이력서/면접 기록 등 지원자 개인정보가 외부 API로 전송되지 않도록, 경량 LLM(sLLM)과 STT 모두를 온프레미스 환경에서 구동하는 로컬 에이전트를 구현한다. 채용 데이터는 기업의 가장 민감한 개인정보 자산 중 하나이다. 따라서 [입력 → 모델 추론 → 출력]의 모든 과정을 내부망 안에서 완결시켜 '데이터 반출 없는 채용 에이전트'라는 보안 차별점을 확보한다. 클라우드 API 대비 추론 품질 및 비용의 트레이드오프는 기능별 실측으로 검증하며, 민감 작업은 로컬로 처리하고 일반 작업만 API로 나누는 하이브리드 구성도 고려한다.
 
-<h2 class="pi-h2">주요 기능</h2>
-<div class="pi-table-wrap">
-<table class="pi-table">
-  <thead>
-    <tr><th>기능</th><th>설명</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>지원자 칸반 보드</td><td>카드를 드래그해 단계 이동(지원 접수 → 서류 검토 → 면접 → 최종 합격/불합격). 모든 이동은 단계 이력으로 기록</td></tr>
-    <tr><td>단계 변경 자동 메일</td><td>단계 이동 시 지원자에게 메일 자동 발송. SQS 큐 + 워커로 비동기 처리, 실패 시 재시도</td></tr>
-    <tr><td>공고 관리 · 공개 지원 링크</td><td>채용 공고 등록·관리. 지원자는 로그인 없이 외부 공개 링크로 지원서 제출</td></tr>
-    <tr><td>이력서 S3 업로드</td><td>presigned URL로 브라우저에서 S3에 직접 업로드 — 파일이 API 서버를 거치지 않는다</td></tr>
-    <tr><td>지원자 검색·필터</td><td>이름·학교·기술스택 검색과 필터. 더미 데이터 10만 건 기준으로 인덱스 튜닝</td></tr>
-    <tr><td>평가 · 면접관 배정</td><td>면접관 배정, 단계별 점수·코멘트 평가 기록</td></tr>
-    <tr><td>인증 · 권한</td><td>JWT 인증, 역할 3종(관리자 / 채용담당자 / 면접관)</td></tr>
-  </tbody>
-</table>
-</div>
+### 3. 지원자가 24시간 접근 가능한 면접 일정 자동화 서비스
 
-<h2 class="pi-h2">기술 스택</h2>
-<div class="pi-stack">
-  <div class="pi-stack-item"><span class="pi-stack-label">BACKEND</span>Python · FastAPI · PostgreSQL</div>
-  <div class="pi-stack-item"><span class="pi-stack-label">FRONTEND</span>React · Vite · TypeScript</div>
-  <div class="pi-stack-item"><span class="pi-stack-label">INFRA</span>Docker · AWS (EC2 · S3 · SES · SQS) · GitHub Actions · Vercel</div>
-  <div class="pi-stack-item"><span class="pi-stack-label">AI</span>Claude API · pgvector · LangGraph</div>
-</div>
+면접관들의 가용 일정을 파악해 지원자에게 후보 시간을 제안하고, 선택을 받아 일정을 확정과 통보하는 조율 과정을 에이전트가 자동화한다. 지원자는 안내 이메일의 링크로 24시간 언제든 접속해 자신의 전형 진행 현황과 면접 일정을 실시간으로 확인과 선택할 수 있고, 궁금한 사항은 챗봇과의 질의응답으로 즉시 해소한다. 확정 및 변경 통보는 기존 비동기 메일 파이프라인(SES·SQS)을 재사용하며, 수 회의 메일 왕복에 걸리던 조율 시간을 단축하고 반복적인 문의 응대를 제거하는 것이 목표다.
 
-<h2 class="pi-h2">아키텍처</h2>
-<div class="pi-table-wrap">
-<table class="pi-table">
-  <thead>
-    <tr><th>계층</th><th>기술</th><th>배포</th></tr>
-  </thead>
-  <tbody>
-    <tr><td>Frontend</td><td>React + TypeScript + Vite</td><td>Vercel</td></tr>
-    <tr><td>Backend API</td><td>FastAPI (Python)</td><td>EC2 · Docker</td></tr>
-    <tr><td>Database</td><td>PostgreSQL + pgvector</td><td>Aurora Serverless v2</td></tr>
-    <tr><td>파일 저장</td><td>S3 (presigned URL 업로드, SSE 암호화)</td><td>AWS S3</td></tr>
-    <tr><td>메일 발송</td><td>SES + SQS (비동기 큐)</td><td>AWS SES/SQS</td></tr>
-    <tr><td>CI/CD</td><td>GitHub Actions</td><td>자동 배포</td></tr>
-  </tbody>
-</table>
-</div>
+### 4. LLM 도구 호출 에이전트 및 RAG 기반 STT 면접 분석
 
-<style>
-  .pi-h1 {
-    font-size: 24px;
-    font-weight: 800;
-    margin: 0 0 8px;
-    word-break: keep-all;
-  }
-  .pi-lead {
-    font-size: 15px;
-    color: #828282;
-    margin: 0 0 40px;
-    word-break: keep-all;
-  }
-  h2.pi-h2 {
-    font-size: 17px;
-    font-weight: 700;
-    color: #2451FF;
-    margin: 40px 0 16px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #eee;
-  }
-  .pi-topics {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    margin-bottom: 8px;
-  }
-  .pi-topic {
-    display: flex;
-    gap: 16px;
-    align-items: flex-start;
-  }
-  .pi-topic-num {
-    flex-shrink: 0;
-    width: 28px;
-    height: 28px;
-    background: #2451FF;
-    color: #fff;
-    font-size: 13px;
-    font-weight: 700;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 2px 0 0;
-  }
-  .pi-topic-title {
-    font-size: 15px;
-    font-weight: 700;
-    margin: 0 0 6px;
-    word-break: keep-all;
-  }
-  .pi-topic-body {
-    font-size: 14px;
-    line-height: 1.75;
-    color: #4b5563;
-    margin: 0;
-    word-break: keep-all;
-  }
-  .pi-table-wrap {
-    overflow-x: auto;
-    margin-bottom: 8px;
-  }
-  table.pi-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 13px;
-  }
-  table.pi-table th,
-  table.pi-table td {
-    border: 1px solid #eee;
-    padding: 10px 12px;
-    text-align: left;
-    vertical-align: top;
-    word-break: keep-all;
-  }
-  table.pi-table th {
-    background: #f7f7f7;
-    font-size: 12px;
-    color: #828282;
-    white-space: nowrap;
-  }
-  .pi-stack {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    margin-bottom: 8px;
-  }
-  .pi-stack-item {
-    font-size: 14px;
-    line-height: 1.6;
-    word-break: keep-all;
-  }
-  .pi-stack-label {
-    display: inline-block;
-    font-size: 11px;
-    font-weight: 700;
-    color: #2451FF;
-    background: #eff3ff;
-    border-radius: 4px;
-    padding: 1px 7px;
-    margin-right: 8px;
-    letter-spacing: 0.04em;
-  }
-</style>
+"김도현 찾아줘 → 면접 안내 이메일 만들어줘"처럼 자연어 대화만으로 지원자 검색/조회/단계 변경/이메일 초안을 수행하는 도구 호출(Tool-Use) 에이전트를 개발하며, 실행성 작업은 초안(pending_action)까지만 만들어 사람의 확인을 거친다. 면접 분석은 [STT → RAG → sLLM] 파이프라인으로 구성한다 — Whisper 기반 STT가 면접 음성을 전사하면, RAG가 해당 지원자의 이력서, 직무 요건, 과거 평가 기록에서 관련 근거를 검색해 컨텍스트로 결합하고, sLLM이 그 근거를 인용하며 면접 내용을 요약 및 분석해 평가 기록으로 전환한다. 근거 문서 없이 모델이 단독 판단하지 않는 구조이며, 채팅, 요약, STT 전 기능에 토큰·비용 로깅을 통일해 E2E 4단계 실측 $0.045의 AI 원가 관측 체계를 갖췄다.
+
+### 5. 웹/모바일 멀티 클라이언트 및 운영 체계
+
+React(Vite/TS) 웹과 Flutter 모바일 앱이 동일한 FastAPI API를 사용하는 계약 중심 설계로, API/ERD 문서를 코드와 같은 커밋에서 갱신하는 규칙으로 5인 병렬 개발의 정합성을 유지한다. Docker, AWS(EC2/S3/SES/SQS), GitHub Actions 기반 배포와 함께 도메인별 파트 분담, ADR 15건, 팀원별 소유 파일 기반 무충돌 칸반 운영까지 — 산출물뿐 아니라 협업 체계 자체도 확장 가능한 구조로 설계한다.
+
+---
+
+## 주요 기능
+
+| 기능 | 설명 |
+|------|------|
+| 지원자 칸반 보드 | 카드를 드래그해 단계 이동(지원 접수 → 서류 검토 → 면접 → 최종 합격/불합격). 모든 이동은 단계 이력으로 기록 |
+| 단계 변경 자동 메일 | 단계 이동 시 지원자에게 메일 자동 발송. SQS 큐 + 워커로 비동기 처리, 실패 시 재시도 |
+| 공고 관리 · 공개 지원 링크 | 채용 공고 등록·관리. 지원자는 로그인 없이 외부 공개 링크로 지원서 제출 |
+| 이력서 S3 업로드 | presigned URL로 브라우저에서 S3에 직접 업로드 — 파일이 API 서버를 거치지 않는다 |
+| 지원자 검색·필터 | 이름·학교·기술스택 검색과 필터(10만 건 기준 인덱스 튜닝) + 임베딩 기반 시맨틱 검색으로 의미가 비슷한 지원자 탐색(ADR-0021) |
+| 평가 · 면접관 배정 | 면접관 배정, 단계별 점수·코멘트 평가 기록 |
+| AI 이력서 요약 | 제출된 이력서·자소서를 3단계 체인(추출→요약→검증)으로 요약해 담당자 화면에 표시. 근거가 부족하면 지어내는 대신 '판단 불가'로 표시하고, 어떤 모델이 만들었는지 태그로 기록한다(ADR-0022) |
+| 아르 — 채용 에이전트 채팅 | 담당자가 자연어로 지원자 조회·검색·단계 변경을 요청하는 도구 호출 에이전트. 실행 전 확인 카드로 사람이 승인하고, 호출 비용을 관측하며, 뻔한 요청은 의도 라우터가 LLM 없이 코드로 처리한다 |
+| 면접 일정 조율 | 면접관 가용 시간과 지원자 선택을 맞춰 확정하는 공개 링크 흐름. 지원자는 대화형 페이지에서 일정을 확인·확정하고, FAQ 챗봇이 문의에 즉답한다 |
+| AI 면접 (텍스트) | 지원자가 공개 링크로 아르와 텍스트 문답으로 진행하는 사전 면접. 대화 기록을 근거 문서와 대조해 요약·분석하며, 표정·음성 감정 분석은 하지 않는다(ADR-0026). 음성 답변은 STT(말을 글로 옮기는 기술)로 전사해 같은 파이프라인으로 분석한다 |
+| 인적성(사전 성향) 설문 | 접수·서류 검토 단계의 지원자에게 메일로 발송하는 10문항 설문(5점 척도). 카테고리 통계는 코드가 계산하고, 아르는 응답을 관찰 문장으로 재서술만 한다 — 성격 유형 판정·점수화·합불 의견은 만들지 않으며, 미응답 불이익도 없다(ADR-0027) |
+| 제출물 무결성 원장 (블록체인) | 이력서·자소서의 파일 지문(SHA-256)을 추가 전용 원장에 해시 사슬로 쌓고, DB 트리거가 수정·삭제·TRUNCATE를 거부한다. 사슬 머리는 폴리곤 테스트넷(Amoy)에 앵커링해 위·변조를 외부에서 검증 가능하게 한다(ADR-0028). 체인 발행은 환경변수로 온·오프한다 |
+| 면접 영상 거짓말 탐지 | 면접 영상의 얼굴 랜드마크 신호(시선·표정 변화)를 분석해 응답 신뢰도 참고 지표를 제공하는 별도 GPU 서비스. 판정이 아니라 담당자 참고용 보조 지표다 |
+| 인증 · 권한 | JWT 인증, 역할 3종(관리자 / 채용담당자 / 면접관) |
+
+---
+
+## 기술 스택
+
+**BACKEND** — Python · FastAPI · SQLAlchemy · PostgreSQL 16 + pgvector · alembic
+
+**FRONTEND** — React · Vite · TypeScript / **APP** — Flutter (Android APK)
+
+**INFRA** — Docker Compose · AWS (EC2 · S3 · SES · SQS) · Caddy · GitHub Actions · Vercel
+
+**AI** — Claude API(claude-haiku-4-5) 기본 + Ollama(qwen3:4b) 온프레미스 옵션 — 환경변수 스위치로 교체 · ko-sroberta 임베딩(로컬) · Whisper/faster-whisper STT
+
+---
+
+## 아키텍처
+
+![Arda 아키텍처 다이어그램](/assets/img/architecture.svg)
+
+지원자는 로그인 없이 공개 링크로, 담당자·면접관은 JWT(역할 3종)로 접근한다. React(Vercel) 프론트가 FastAPI(EC2 · Docker) API를 호출하고, 이력서는 presigned URL로 브라우저에서 S3에 직접 업로드된다. 단계 변경 메일은 SQS 큐에 넣어 워커가 SES로 비동기 발송·재시도한다.
+
+| 계층 | 기술 | 배포 |
+|------|------|------|
+| Frontend | React + TypeScript + Vite | Vercel |
+| Backend API | FastAPI (Python) | EC2 · Docker |
+| Database | PostgreSQL + pgvector | Aurora Serverless v2 |
+| 파일 저장 | S3 (presigned URL 업로드, SSE 암호화) | AWS S3 |
+| 메일 발송 | SES + SQS (비동기 큐) | AWS SES/SQS |
+| CI/CD | GitHub Actions | 자동 배포 |
+
+---
+
+## ERD — 테이블 14개 (v1.7)
+
+![Arda ERD — 핵심 9테이블](/assets/img/erd.png)
+*다이어그램은 핵심 9테이블(v1.0 기준) — 이후 확장분은 아래 참조*
+
+지원서(applications)를 축으로 한 14개 테이블. 핵심 9개 — 공고(job_postings)·내부 사용자(users)와, 단계 이력·평가·담당자 메모·이력서 파일·메일 발송 로그·면접관 배정. 이후 확장 — 메일 템플릿, 면접관 가용 시간, 일정 제안/슬롯, 시맨틱 검색 임베딩(768차원), AI 면접 3종, 인적성 설문 2종. 지원서에는 접수 시 1회 생성되는 AI 요약 컬럼(ai_summary·생성 시각·모델명)이 함께 저장되고, 스키마 이행은 alembic 리비전 4개로 관리한다. 복합 UNIQUE 2건 — applications(job_posting_id, email) · interviewer_assignments(application_id, interviewer_id).
+
+---
+
+## 화면 (실서비스, 2026-09-03)
+
+실제 구동 화면(로컬 dev, 더미 데이터).
+
+![대시보드](/assets/img/app-dashboard.png)
+*대시보드 — 리뷰 대기·면접 진행·진행중 공고 요약, 면접 캘린더, 공고별 단계 파이프라인*
+
+![칸반 뷰 + 지원자 상세 패널](/assets/img/app-kanban-panel.png)
+*칸반 뷰 + 지원자 상세 패널 — 아르의 요약·지원 정보·단계 변경·메일 발송. 자료가 부족한 지원자는 요약을 지어내지 않고 "자료가 부족해 요약을 만들지 못했습니다"로 정직하게 처리한다*
+
+![아르 에이전트 패널](/assets/img/app-ar-chat.png)
+*아르 에이전트 패널 — "지원자 목록 보여줘" 실제 질문·응답(16명 검색, 상위 5명 카드 표시). 읽기 도구는 즉시 실행되는 실사용 흐름*

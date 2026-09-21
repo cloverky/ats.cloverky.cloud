@@ -1,65 +1,54 @@
-# CLAUDE.md — demo.cocerky.cloud
+# Project: ats.suvisdev.cloud — Arda(ATS) 팀 문서 사이트
 
-이 프로젝트는 제안서/보고서를 Jekyll 정적 사이트로 문서화하는 작업이다.
-보고서의 각 페이지(장)를 Jekyll page로 1:1 매핑한다.
+## 정체
+- **Arda(채용 지원자 관리 시스템) 팀 프로젝트의 공식 문서 사이트**다.
+  팀 Seuk(5명) 공용 — 회사 발표·평가자 열람용.
+- 개인 포트폴리오(jk.suvisdev.cloud, `~/suvisdev.cloud/suvisjk`)와 별개다.
+  **개인 프로젝트(Mova·Gildle 등) 콘텐츠는 여기 넣지 않는다.** 반대로
+  Arda/ATS 콘텐츠는 개인 지킬이 아니라 항상 이 저장소에 넣는다
+  (2026-09-03 확정 방침 — suvisjk/CLAUDE.md 상단 블록과 쌍).
+- 코드 저장소는 `Seuk-Team/Arda`(public), 서비스는 seuk.suvisdev.cloud · API는 api.seuk.suvisdev.cloud.
 
-## 프로젝트 정체성
+## 기술
+- Jekyll + **just-the-docs** 테마(dark), Ruby는 rbenv.
+- 로컬 확인: `bundle exec jekyll build` (서버는 `serve --host 0.0.0.0`).
+- `git push` → GitHub Actions가 Pages로 자동 배포(약 1분). 커밋이 곧 배포다.
 
-- 사업명: Eval-ATS : GraphRAG 파이프라인 및 정량 평가 기반 지원자 관리 시스템
-- 개발기간: 2026-08-20 ~ 2026-10-27
-- 개발팀: SEUK
-- 개발자: 박소연, 김민아, 이재우, 진수택, 이우정
-- 깃허브 주소: https://github.com/cloverky/ats.cloverky.cloud
-- 데모 사이트: https://ats.cloverky.cloud
+## 구조
+- 페이지: `index`(표지) · `toc` · `about`(프로젝트 소개 — 아키텍처·ERD·화면)
+  · `overview`(사업 개요) · `requirements` · `guidelines` · `schedule`
+  · `kanban` · `devlog` · `devlog-details` · `feedback` · `appendix`
+- `_posts/` — 개발기 포스트. **devlog 타임라인이 칸반 done 카드와 포스트를
+  날짜 기준으로 자동 병합**하므로, 포스트만 푸시해도 타임라인에 반영된다.
+- `_data/kanban/<owner>.yml` — **팀원별 소유 파일. 자기 파일만 수정한다**
+  (충돌 방지 규칙, 파일 상단 경고 참조). 카드 필드:
+  `title/feature/status(doing|done)/done(날짜)/note/detail(펼침 상세)`.
+- `_data/feedback/<owner>.yml` — 팀원별 피드백, 같은 소유 규칙.
 
-## 환경
+## 팀 (도메인 오너제, ADR-0007 — 2026-09-03 역할 개편)
+| owner | 이름 | 도메인 |
+|---|---|---|
+| suvisdev | 진수택 (팀장) | **인프라·총괄(AWS)** ← 이 머신의 사용자 |
+| woojeongalex | 이우정 | 백엔드 |
+| cloverky | 박소연 | 에이전트 |
+| minahdev | 김민아 | 앱·프론트 |
 
-- WSL2 Ubuntu, 경로 `~/projects/demo.cocerky.cloud`
-- Ruby 3.4.10 (rbenv), Jekyll 4.4.1, Bundler, theme: minima
-- 로컬 미리보기: `bundle exec jekyll serve --host 0.0.0.0 --port 4000` (백그라운드 실행)
-- `_config.yml` 변경 시 서버 재시작 필수 (자동 리로드 안 됨)
-- sudo가 필요한 `apt` 설치는 에이전트가 대신 실행 불가 (TTY 없음) — 사용자가 WSL 터미널에서 직접 실행해야 함
+이재우(bestcow)는 팀에서 빠짐 — 칸반의 과거 done 카드는 타임라인 이력
+보존을 위해 그대로 둔다(현행 역할 표에는 미등재).
 
-## 페이지 구조 규칙 (Report-as-Site)
+이 머신에서 작업할 때는 `_data/kanban/suvisdev.yml`·`_data/feedback/suvisdev.yml`만
+수정한다. 다른 팀원 파일은 읽기 전용.
 
-보고서의 각 페이지는 Jekyll page(.markdown) 하나로 매핑한다.
-
-| 순서 | 내용 | 파일 | permalink |
-|---|---|---|---|
-| 1 | 표지(사업명) | index.markdown (layout: cover) | / |
-| 2 | 목차 | toc.markdown | /toc/ |
-| 3+ | 각 장 | 0N-<슬러그>.markdown (예: 03-사업개요.markdown) | /0N-<슬러그>/ |
-| - | 개발 로그 | devlog.markdown | /devlog/ |
-| - | 미결항목 | open-items.markdown | /open-items/ |
-
-표지(index.markdown)는 `_layouts/cover.html`을 사용하며, 개발 기간/개발팀/문서 작성일/깃허브 주소/데모 사이트를 front matter 필드로 관리한다.
-상단 네비게이션은 `_config.yml`의 `header_pages`로 명시적으로 고정한다 (목차 → 개발 로그 → 미결항목 순, about.markdown은 제외).
-
-새 장을 추가할 때:
-
-1. `toc.markdown`의 대분류/소분류 번호를 그대로 파일명 슬러그로 사용한다.
-2. front matter에 `layout: page`, `title`, `permalink`를 반드시 넣는다.
-3. `toc.markdown`에 해당 장으로의 링크를 추가해 목차와 실제 페이지를 항상 동기화한다.
-
-## 세션 간 진행상황 기록 규칙
-
-다음 세션에서 이어서 작업할 수 있도록 진행 상황은 두 곳에 기록한다.
-
-1. 이 문서의 진행상황 섹션 — 완료/미완료를 최신 상태로 덮어쓴다 (히스토리 나열 아님).
-2. `toc.markdown` — 아직 작성되지 않은 장은 항목 옆에 `(작성 예정)`을 표시한다.
-
-작업 시작 전: 이 문서와 `toc.markdown`을 먼저 읽고 현재 상태를 파악한다.
-작업 종료 시: 새로 추가/완성된 장을 목차에 반영하고, 이 문서의 진행상황 섹션을 갱신한다.
-
-## 진행상황
-
-- [x] Ruby/rbenv/Jekyll 환경 구축 (2026-08-20)
-- [x] 표지(index.markdown) 작성 — ATS 플랫폼 주제로 전환, cover 레이아웃 적용 (2026-08-21)
-- [x] 목차(toc.markdown) 작성 — 4개 대분류
-- [x] 상단 네비 목차/개발 로그/미결항목으로 재구성, devlog.markdown·open-items.markdown 빈 페이지 생성 (2026-08-21)
-- [x] toc.markdown을 RFP 응답 양식(4개 대분류)에서 기술 개발문서 스타일(5개 대분류)로 전면 재구성 — 2번 대분류를 "개발 요구 사항"으로 바꿔 ATS 기술 요건 반영, "개발 일정 및 추진 체계"·"부록" 신규 추가 (2026-08-21)
-- [ ] 1. 사업 개요 (사업 목적 / 주요 사업 내용 / 기대 효과) — 미작성
-- [ ] 2. 개발 요구 사항 (목적 / 개발 범위 / 지원자 데이터 수집 및 연계 / GraphRAG 파이프라인 구축 / 정량 평가 기반 지원자 관리 기능 / 시스템 아키텍처 / 보안 및 개인정보 보호) — 미작성
-- [ ] 3. 주요 개발 수행 지침 (일반사항 / 개발 표준 및 산출물 / 품질 관리 및 테스트) — 미작성
-- [ ] 4. 개발 일정 및 추진 체계 (단계별 개발 일정 / 조직 구성 및 역할 분담 / 위험 관리 방안) — 미작성
-- [ ] 5. 부록 (용어 정의 / 관련 서식) — 미작성
+## 작성 규칙
+- **발표용 톤** — 외부(평가자·회사)에 그대로 보여주는 문서. 내부 작업 용어
+  ("피드백 반영" 등) 대신 발표 표현("기능 확정", "검토 결과")을 쓴다.
+- **전문적이되 누구나 읽게** (2026-09-03 사용자 지시) — 전문 용어를 쓰면
+  짧은 풀이를 함께 단다(예: "presigned URL(일회용 업로드 허가 주소)",
+  "revert(문제 커밋 되돌리기)"). 비개발자 평가자가 읽어도 흐름이 끊기지
+  않아야 한다. 팀 내부 사정(이탈·권한 인수 등)은 싣지 않는다.
+- 요약표 먼저, 상세는 뒤에.
+- 이미지는 `assets/img/`에 두고 절대경로(`/assets/img/...`)로 참조한다.
+- `index.markdown`의 **문서 작성일은 2026-08-20 고정**(자동 갱신 제거,
+  커밋 f09ba62) — 건드리지 않는다.
+- 마일스톤 게이트 2개가 일정의 축: **09/04 초기 버전**(외부에 보여줄 수
+  있는 최소 동작) · **09/30 1차 완성**. 팀장 머지·검수는 매주 금요일.

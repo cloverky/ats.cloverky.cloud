@@ -1,125 +1,57 @@
 ---
-layout: page
+layout: default
 title: 개발 로그
+nav_order: 8
 permalink: /devlog/
 ---
 
-스프린트별 일자 단위 작업 기록. 각 스프린트를 클릭하면 날짜·담당·진행 상태가 담긴 상세 로그로 이동한다.
+# 개발 로그
 
-<ul class="devlog-list">
-  <li class="devlog-row">
-    <a class="devlog-link" href="/sprint-1/">
-      <span class="devlog-sprint">Sprint 1</span>
-      <span class="devlog-date">8.20 ~ 9.2</span>
-      <span class="devlog-goal">개발 환경 및 기반 설계</span>
-    </a>
-  </li>
-  <li class="devlog-row disabled">
-    <span class="devlog-sprint">Sprint 2</span>
-    <span class="devlog-date">9.3 ~ 9.16</span>
-    <span class="devlog-goal">핵심 기능 1차 구현</span>
-    <span class="devlog-pending">작성 예정</span>
-  </li>
-  <li class="devlog-row disabled">
-    <span class="devlog-sprint">Sprint 3</span>
-    <span class="devlog-date">9.17 ~ 9.30</span>
-    <span class="devlog-goal">단계 전환 · 알림 · 대용량 데이터</span>
-    <span class="devlog-pending">작성 예정</span>
-  </li>
-  <li class="devlog-row disabled">
-    <span class="devlog-sprint">Sprint 4</span>
-    <span class="devlog-date">10.1 ~ 10.14</span>
-    <span class="devlog-goal">GraphRAG 통합 · QA</span>
-    <span class="devlog-pending">작성 예정</span>
-  </li>
-  <li class="devlog-row disabled">
-    <span class="devlog-sprint">Sprint 5</span>
-    <span class="devlog-date">10.15 ~ 10.27</span>
-    <span class="devlog-goal">배포 및 데모 준비</span>
-    <span class="devlog-pending">작성 예정</span>
-  </li>
-</ul>
+## 완료 작업 타임라인
 
-<h2 class="devlog-h2">역할별 로그</h2>
-<ul class="devlog-list">
-  <li class="devlog-row">
-    <a class="devlog-link" href="/role-frontend/">
-      <span class="devlog-sprint">FE</span>
-      <span class="devlog-date">cloverky</span>
-      <span class="devlog-goal">프론트엔드 로드맵 — 주간 계획·작업 큐·리스크·작업 로그</span>
-    </a>
-  </li>
-  <li class="devlog-row">
-    <a class="devlog-link" href="/team-log/">
-      <span class="devlog-sprint">팀</span>
-      <span class="devlog-date">팀원</span>
-      <span class="devlog-goal">김민아·이우정·suvisdev 등 팀원별 작업 로그</span>
-    </a>
-  </li>
-</ul>
+[팀 칸반](/kanban/)에서 `done` 처리된 카드와 개발기 포스트가 날짜 기준으로 자동 집계됩니다 — 카드는 클릭하면 상세 요약이 펼쳐지고, 포스트는 본문으로 이동합니다.
 
 <style>
-  h2.devlog-h2 {
-    font-size: 15px;
-    font-weight: 700;
-    color: #828282;
-    margin: 0 0 8px;
-  }
-  .devlog-list {
-    list-style: none;
-    margin: 0 0 40px;
-    padding: 0;
-  }
-  .devlog-row {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    padding: 16px 4px;
-    border-top: 1px solid #eee;
-  }
-  .devlog-row:first-child {
-    border-top: 0;
-  }
-  .devlog-link {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    flex: 1;
-    color: inherit;
-    text-decoration: none;
-  }
-  .devlog-link:hover .devlog-sprint {
-    text-decoration: underline;
-  }
-  .devlog-row.disabled {
-    color: #aaa;
-  }
-  .devlog-sprint {
-    flex: 0 0 72px;
-    font-size: 14px;
-    font-weight: 700;
-    color: #2451FF;
-  }
-  .devlog-row.disabled .devlog-sprint {
-    color: #aaa;
-  }
-  .devlog-date {
-    flex: 0 0 100px;
-    font-size: 12.5px;
-    color: #828282;
-  }
-  .devlog-goal {
-    flex: 1;
-    font-size: 14px;
-    word-break: keep-all;
-  }
-  .devlog-pending {
-    flex: 0 0 auto;
-    font-size: 12px;
-    font-weight: 700;
-    color: #aaa;
-    background: #f5f5f5;
-    padding: 3px 10px;
-    border-radius: 10px;
-  }
+.dl-day { display: flex; align-items: center; gap: 10px; margin: 1.8rem 0 0.7rem; font-size: 0.98rem; font-weight: 800; color: #eceff4; }
+.dl-day::before { content: ""; width: 5px; height: 1.1em; border-radius: 2px; background: #7aa2f7; }
+.dl-day::after { content: ""; flex: 1; height: 1px; background: rgba(255,255,255,0.14); }
+.dl-row { display: flex; flex-wrap: wrap; align-items: baseline; gap: 7px; padding: 5px 0 5px 10px; border-left: 3px solid rgba(255,255,255,0.15); font-size: 0.85rem; }
+.dl-owner { font-size: 0.66rem; font-weight: 700; padding: 1px 8px; border-radius: 999px; color: #111; white-space: nowrap; }
+.dl-feature { font-size: 0.66rem; padding: 1px 7px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.2); opacity: 0.8; white-space: nowrap; }
+.dl-note { font-size: 0.74rem; opacity: 0.55; width: 100%; padding-left: 2px; }
+a.dl-link { color: inherit; text-decoration: none; }
+a.dl-link:hover { background: rgba(255,255,255,0.05); border-left-color: #7aa2f7; }
+.dl-go { margin-left: auto; font-size: 0.7rem; color: #7aa2f7; opacity: 0; white-space: nowrap; }
+a.dl-link:hover .dl-go { opacity: 1; }
+details.dl-item { margin: 0; }
+details.dl-item > summary.dl-row { cursor: pointer; list-style: none; }
+details.dl-item > summary.dl-row::-webkit-details-marker { display: none; }
+details.dl-item > summary.dl-row:hover { background: rgba(255,255,255,0.05); border-left-color: #7aa2f7; }
+details.dl-item > summary.dl-row:hover .dl-go { opacity: 1; }
+details.dl-item[open] > summary.dl-row { border-left-color: #7aa2f7; background: rgba(122,162,247,0.06); }
+details.dl-item[open] > summary.dl-row .dl-go { opacity: 1; }
+.dl-detail { font-size: 0.82rem; line-height: 1.75; opacity: 0.92; border-left: 3px solid rgba(122,162,247,0.4); margin: 2px 0 10px; padding: 8px 0 8px 14px; }
 </style>
+
+{% assign entries = "" | split: "" %}
+{% for member in site.data.kanban %}{% assign m = member[1] %}{% for card in m.cards %}{% if card.status == "done" and card.done %}
+{% capture row %}{{ card.done }}¦{{ m.color }}¦{{ m.name | default: m.owner }}¦{{ card.feature }}¦{{ card.title }}¦{{ card.note }}¦{{ card.detail }}{% endcapture %}
+{% assign entries = entries | push: row %}
+{% endif %}{% endfor %}{% endfor %}
+{% for post in site.posts %}
+{% capture row %}{{ post.date | date: "%Y-%m-%d" }}¦{{ post.owner_color | default: "#9aa0ac" }}¦{{ post.owner | default: "팀" }}¦포스트¦{{ post.title }}¦{{ post.summary }}¦¦{{ post.url | relative_url }}{% endcapture %}
+{% assign entries = entries | push: row %}
+{% endfor %}
+{% assign entries = entries | sort | reverse %}
+{% assign prev_day = "" %}
+{% for row in entries %}{% assign p = row | split: "¦" %}
+{% if p[0] != prev_day %}<div class="dl-day">{{ p[0] }}</div>{% assign prev_day = p[0] %}{% endif %}
+{% if p[7] and p[7] != "" %}
+<a class="dl-row dl-link" href="{{ p[7] }}"><span class="dl-owner" style="background: {{ p[1] }};">{{ p[2] }}</span><span class="dl-feature">{{ p[3] }}</span><span>{{ p[4] }}</span><span class="dl-go">자세히 ›</span>{% if p[5] and p[5] != "" %}<span class="dl-note">{{ p[5] }}</span>{% endif %}</a>
+{% else %}
+<details class="dl-item"><summary class="dl-row"><span class="dl-owner" style="background: {{ p[1] }};">{{ p[2] }}</span>{% if p[3] and p[3] != "" %}<span class="dl-feature">{{ p[3] }}</span>{% endif %}<span>{{ p[4] }}</span><span class="dl-go">자세히 ▾</span>{% if p[5] and p[5] != "" %}<span class="dl-note">{{ p[5] }}</span>{% endif %}</summary><div class="dl-detail">{% if p[6] and p[6] != "" %}{{ p[6] | strip | newline_to_br }}{% else %}상세 기록이 없습니다.{% endif %}</div></details>
+{% endif %}
+{% endfor %}
+{% if entries.size == 0 %}
+<p style="opacity:0.5;">아직 완료 기록이 없습니다.</p>
+{% endif %}

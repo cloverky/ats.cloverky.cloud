@@ -1,63 +1,51 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-#
-# If you need help with YAML syntax, here are some quick references for you:
-# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
-# https://learnxinyminutes.com/docs/yaml/
-#
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
+title: Eval-ATS
+description: >-
+  AI 기반 채용 프로세스 자동화 및 지원자 통합 관리 플랫폼 — 팀 SEUK
+baseurl: ""
+url: "https://ats.cloverky.cloud"
+github_username: cloverky
 
-title: "Eval-ATS : GraphRAG 파이프라인 및 정량 평가 기반 지원자 관리 시스템"
-author: Team.Seuk
-email: hisoyeon04@gmail.com
-description: >- # this means to ignore newlines until "baseurl:"
-  지원자를 놓치지 않는 AI 채용 자동화, 처음부터 끝까지.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: cloverky_
-github_username:  cloverky
-
-# Build settings
-theme: minima
+theme: just-the-docs
 plugins:
   - jekyll-feed
 
-# Explicit top-nav pages, in display order
-header_pages:
-  - toc.markdown
-  - about.markdown
-  - devlog.markdown
-  - kanban.markdown
-  - feedback.markdown
-  - open-items.markdown
+color_scheme: dark
 
-# Exclude from processing.
-# The following items will not be processed, by default.
-# Any item listed under the `exclude:` key here will be automatically added to
-# the internal "default list".
-#
-# Excluded items can be processed by explicitly listing the directories or
-# their entries' file path in the `include:` list.
-#
-# exclude:
-#   - .sass-cache/
-#   - .jekyll-cache/
-#   - gemfiles/
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules/
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+aux_links:
+  "GitHub":
+    - "https://github.com/cloverky/ats.cloverky.cloud"
+  "서비스":
+    - "https://arda.seuk.cloud"
+aux_links_new_tab: true
+
+heading_anchors: true
+
+nav_sort: case_insensitive
+
+search_enabled: true
+search:
+  heading_level: 3
+
+back_to_top: true
+back_to_top_text: "맨 위로"
+
+footer_content: "SEUK Team &copy; 2026 &mdash; Eval-ATS"
+
+port: 4002
+
+callouts:
+  warning:
+    title: 주의
+    color: red
+  note:
+    title: 참고
+    color: blue
+  tip:
+    title: 팁
+    color: green
+
+exclude:
+  - CLAUDE.md
+  - .jekyll-cache/
+  - Gemfile
+  - Gemfile.lock
